@@ -3,14 +3,14 @@ import ProjectItem from "./ProjectItem";
 
 function ProjectList({ projects }) {
   console.log(projects);
-  const toBePlacedProj = projects.map((projects)=>{
-    return <div key = {projects} >  {projects}</div>
-  }
-  )
+  const toBePlacedProj = projects.map( (project) => {
+    return <ProjectItem key={project.id} name={project.name} about={project.about} technologies={project.technologies} />
+  })
+
   return (
     <div id="projects">
       <h2>My Projects</h2>
-      <div id="project-list">{projects}</div>
+      <div id="project">{toBePlacedProj}</div>
     </div>
   );
 }
